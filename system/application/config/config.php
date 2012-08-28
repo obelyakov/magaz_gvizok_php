@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://newlegion.loc/";
+$config['base_url']	= "http://new_leg_grom_git.loc/";
 
 /*
 |--------------------------------------------------------------------------

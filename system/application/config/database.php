@@ -37,6 +37,7 @@
 switch ($_SERVER['HTTP_HOST']) {
 
     case 'newlegion.loc':
+    case 'new_leg_grom_git.loc':
         $active_group = "test";
 
     break;
