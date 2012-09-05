@@ -51,7 +51,7 @@ $(document).ready(function(){
     <h2>Дерево серий</h2>
     <ul>
         <?=$shtml;?>
-    </u>
+    </ul>
 </div>
 <div class="grid_9">
     <h2>Рабочая зона</h2>

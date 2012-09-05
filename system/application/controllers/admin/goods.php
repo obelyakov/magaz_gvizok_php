@@ -113,6 +113,8 @@ class Goods extends Controller {
             $data['goods'] = 'nogood';
             $data['nogood'] = 1;
         }
+        if($this->uri->segment(5)=='foto1')
+            $data['mess'] = 'Фотографию не удалось загрузить';
         
         $data['seria_id'] = $seria_id;
 
@@ -159,9 +161,11 @@ class Goods extends Controller {
      */
     function ajax_edit_post()
     {
+        print "dqweqw";
+        var_dump($_POST);
         $this->goods_dao->edit_good($this->input->post('good_id'), $this->input->post('seria_id'), $_POST['id_filedtc']);
-         
-        
+
+
     }
     
     /**  Окно-форма редактирования товара
@@ -189,6 +193,7 @@ class Goods extends Controller {
             'container' => 'goods/good_edit',
             );
         
+        $data['foto'] = $this->goods_dao->get_foto($id_good);
         $data['good_id'] = $id_good;
         $data['tcf'] = $tcf;
         $data['seria_id'] = $id_seria;
@@ -205,13 +210,47 @@ class Goods extends Controller {
     {
         $this->load->model('admin/goods_model', 'goods_dao');
         $good = $this->goods_dao->get_good($id_good);
-        
-        
         $this->goods_dao->del_good($id_good);
         redirect('/admin/goods/edit/'.(string) $good[0]->id_seria);
         die();
-                
     }
+
+
+    function upload_foto()
+    {
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size']	= '2048';
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
+        $config['encrypt_name']  = TRUE;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload())
+        {
+            redirect('/admin/goods/edit/'.(string) $this->input->post('seria_id').'/foto1');
+        }
+        else
+        {
+            $data = $this->upload->data();
+            $this->goods_dao->add_foto($this->input->post('good_id'), $data['file_name'], $data['orig_name']);
+            redirect('/admin/goods/edit/'.(string) $this->input->post('seria_id'));
+        }
+    }
+
+    /**  фук-ция удаления фото
+     * @param type $id_good
+     */
+    function delfoto($id_foto)
+    {
+        $foto = $this->goods_dao->get_foto_byid($id_foto);
+        unlink($_SERVER['DOCUMENT_ROOT'].'/uploads/'.$foto[0]->fname);
+        $this ->goods_dao->del_foto($id_foto);
+        redirect('/admin/goods/edit/'.(string) $this->uri->segment(5));
+        die();
+    }
+
     
 }
 
