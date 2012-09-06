@@ -19,7 +19,7 @@ class Ac_image_class
      * Инициализация объекта
      * @param $file string	Путь к временному файлу
      */
-    function __construct($param)
+    function Ac_image_class($param)
     {
         $file = $param['file'];
         if (@!file_exists($file)) exit("File does not exist");

@@ -31,7 +31,7 @@
 <? if(is_array($foto)){
     echo "<ul>";
     foreach($foto  as $v){
-        echo "<li><a target='_blank' href='/uploads/".$v->fname."'>".$v->real_fname."</a> <a href='/admin/goods/delfoto/".$v->id."/".$seria_id."'>x</a>";}
+        echo "<li><a target='_blank' href='/uploads/".$v->fname."'><img src='/uploads/".$this->config->item('foto_thumb').$v->fname."'>".$v->real_fname."</a> <a href='/admin/goods/delfoto/".$v->id."/".$seria_id."'>x</a>";}
     echo "</ul>";
     }?>
 <?php echo form_open_multipart('/admin/goods/upload_foto');?>

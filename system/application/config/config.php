@@ -325,5 +325,10 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
+#фотки товара
+$config['foto_thumb'] = "thumb_";
+$config['good_foto'] = array('thumb'=>array('width'=>83, 'height'=>False), 'foto'=>array('width'=>270, 'height'=>False));
+
+
 /* End of file config.php */
 /* Location: ./system/application/config/config.php */

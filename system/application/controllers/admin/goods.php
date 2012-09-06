@@ -233,13 +233,17 @@ class Goods extends Controller {
         }
         else
         {
+            $thumb = $this->config->item('good_foto');
             $data = $this->upload->data();
+            $pinfo = pathinfo($data['file_name']);
             $this->load->library('ac_image_class', array('file'=>$_SERVER['DOCUMENT_ROOT'].'/uploads/'.$data['file_name']));
-            #$this->ac_image_class->cropSquare(0, 0, 200); //вырезали квадратную область
-            $this->ac_image_class->resize(500, 500); //масштабировали изображение, вписав его в рамки
-            $path = $this->ac_image_class->save($_SERVER['DOCUMENT_ROOT'].'/uploads/', 'image', 'jpg', false, 100); //сохранили
+            unlink($_SERVER['DOCUMENT_ROOT'].'/uploads/'.$data['file_name']);
+            $this->ac_image_class->resize($thumb['foto']['width'], $thumb['foto']['height']); //масштабировали изображение, вписав его в рамки
+            $this->ac_image_class->save($_SERVER['DOCUMENT_ROOT'].'/uploads/', $pinfo['filename'], 'jpg', True, 100); //сохранили
+            $this->ac_image_class->resize($thumb['thumb']['width'], $thumb['thumb']['height']); //масштабировали изображение, вписав его в рамки
+            $this->ac_image_class->save($_SERVER['DOCUMENT_ROOT'].'/uploads/', $this->config->item('foto_thumb').$pinfo['filename'], 'jpg', True, 100); //сохранили
 
-            $this->goods_dao->add_foto($this->input->post('good_id'), $data['file_name'], $data['orig_name']);
+            $this->goods_dao->add_foto($this->input->post('good_id'), $pinfo['filename'].'.jpg ', $data['orig_name']);
             redirect('/admin/goods/edit/'.(string) $this->input->post('seria_id'));
         }
     }
@@ -251,6 +255,7 @@ class Goods extends Controller {
     {
         $foto = $this->goods_dao->get_foto_byid($id_foto);
         unlink($_SERVER['DOCUMENT_ROOT'].'/uploads/'.$foto[0]->fname);
+        unlink($_SERVER['DOCUMENT_ROOT'].'/uploads/'.$this->config->item('foto_thumb').$foto[0]->fname);
         $this ->goods_dao->del_foto($id_foto);
         redirect('/admin/goods/edit/'.(string) $this->uri->segment(5));
         die();
