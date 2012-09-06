@@ -234,6 +234,11 @@ class Goods extends Controller {
         else
         {
             $data = $this->upload->data();
+            $this->load->library('ac_image_class', array('file'=>$_SERVER['DOCUMENT_ROOT'].'/uploads/'.$data['file_name']));
+            #$this->ac_image_class->cropSquare(0, 0, 200); //вырезали квадратную область
+            $this->ac_image_class->resize(500, 500); //масштабировали изображение, вписав его в рамки
+            $path = $this->ac_image_class->save($_SERVER['DOCUMENT_ROOT'].'/uploads/', 'image', 'jpg', false, 100); //сохранили
+
             $this->goods_dao->add_foto($this->input->post('good_id'), $data['file_name'], $data['orig_name']);
             redirect('/admin/goods/edit/'.(string) $this->input->post('seria_id'));
         }
