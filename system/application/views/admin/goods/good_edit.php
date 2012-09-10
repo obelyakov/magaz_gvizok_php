@@ -24,8 +24,9 @@
     <?endif;?>
 <? endforeach; ?>
 
-        <input type="submit" value="Редактировать">
+<input type="submit" value="Редактировать">
 </form>
+<hr>
 <h2>Фото:</h2>
 <?php if(isset($error)) echo $error;?>
 <? if(is_array($foto)){
@@ -38,9 +39,22 @@
 <input type="hidden"  name="seria_id" value="<?=$seria_id;?>">
 <input type="hidden"  name="good_id" value="<?=$good_id;?>">
 <input type="file" name="userfile" size="20" />
-
 <br /><br />
-
 <input type="submit" value="Загрузить" />
-
+</form>
+<hr>
+<h2>Файлы:</h2>
+<?php if(isset($error)) echo $error;?>
+<? if(is_array($file)){
+    echo "<ul>";
+    foreach($file  as $v){
+        echo "<li><a target='_blank' href='/uploads/".$v->fname."'>".$v->real_fname."</a> <a href='/admin/goods/delfile/".$v->id."/".$seria_id."'>x</a>";}
+    echo "</ul>";
+}?>
+<?php echo form_open_multipart('/admin/goods/upload_file');?>
+<input type="hidden"  name="seria_id" value="<?=$seria_id;?>">
+<input type="hidden"  name="good_id" value="<?=$good_id;?>">
+<input type="file" name="userfile" size="20" />
+<br /><br />
+<input type="submit" value="Загрузить" />
 </form>

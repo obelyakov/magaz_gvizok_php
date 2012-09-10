@@ -192,8 +192,9 @@ class Goods extends Controller {
         $data = array(
             'container' => 'goods/good_edit',
             );
-        
+
         $data['foto'] = $this->goods_dao->get_foto($id_good);
+        $data['file'] = $this->goods_dao->get_file($id_good);
         $data['good_id'] = $id_good;
         $data['tcf'] = $tcf;
         $data['seria_id'] = $id_seria;
@@ -207,7 +208,7 @@ class Goods extends Controller {
      * @param type $id_good 
      */
     function delone($id_good)
-    {
+    { #TODO при удалении товара удалить все его файлы и фото (база и файлы)
         $this->load->model('admin/goods_model', 'goods_dao');
         $good = $this->goods_dao->get_good($id_good);
         $this->goods_dao->del_good($id_good);
@@ -248,6 +249,29 @@ class Goods extends Controller {
         }
     }
 
+    function upload_file()
+    {
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'pdf|zip|rar|xls|doc';
+        $config['max_size']	= '2048';
+        #$config['max_width']  = '1024';
+        #$config['max_height']  = '768';
+        $config['encrypt_name']  = TRUE;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload())
+        {
+            redirect('/admin/goods/edit/'.(string) $this->input->post('seria_id').'/foto1');
+        }
+        else
+        {
+            $data = $this->upload->data();
+            $pinfo = pathinfo($data['file_name']);
+            $this->goods_dao->add_file($this->input->post('good_id'), $pinfo['filename'].".".$pinfo['extension'], $data['orig_name']);
+            redirect('/admin/goods/edit/'.(string) $this->input->post('seria_id'));
+        }
+    }
     /**  фук-ция удаления фото
      * @param type $id_good
      */
@@ -261,7 +285,18 @@ class Goods extends Controller {
         die();
     }
 
-    
+    /**  фук-ция удаления Файла
+     * @param type $id_good
+     */
+    function delfile($id_foto)
+    {
+        $foto = $this->goods_dao->get_file_byid($id_foto);
+        unlink($_SERVER['DOCUMENT_ROOT'].'/uploads/'.$foto[0]->fname);
+        $this ->goods_dao->del_file($id_foto);
+        redirect('/admin/goods/edit/'.(string) $this->uri->segment(5));
+        die();
+    }
+
 }
 
 

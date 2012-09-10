@@ -177,12 +177,25 @@ class goods_model extends Model {
         $this->db->insert('photo_good_tb', array('good_id'=>$good_id,
                 'fname'=>$name,
                 'real_fname'=>$real_name)
-            );
+        );
+    }
+
+    function add_file($good_id, $name, $real_name)
+    {
+        $this->db->insert('file_good_tb', array('good_id'=>$good_id,
+                'fname'=>$name,
+                'real_fname'=>$real_name)
+        );
     }
 
     function del_foto($id)
     {
         $this->db->delete('photo_good_tb', array('id'=>$id));
+    }
+
+    function del_file($id)
+    {
+        $this->db->delete('file_good_tb', array('id'=>$id));
     }
 
     function get_foto($good_id)
@@ -192,9 +205,23 @@ class goods_model extends Model {
         return $query->result();
     }
 
+    function get_file($good_id)
+    {
+        $this->db->select()->from('file_good_tb')->where(array('good_id'=>$good_id));
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function get_foto_byid($id)
     {
         $this->db->select()->from('photo_good_tb')->where(array('id'=>$id));
+        $query = $this->db->get();
+        return $query->result_object();
+    }
+
+    function get_file_byid($id)
+    {
+        $this->db->select()->from('file_good_tb')->where(array('id'=>$id));
         $query = $this->db->get();
         return $query->result_object();
     }
