@@ -56,8 +56,52 @@ class common_model extends Model {
     {
         return $this->db->delete('news_tb', array('id'=>$id));
     }
-    
 
-    
+
+
+
+    function get_objects_list()
+    {
+        $this->db->select('*')
+            ->from('objects_tb')
+            ->order_by('id', 'desc');
+        $query = $this->db->get();
+        if($query->num_rows > 0){
+            return $query->result();
+        }else{
+            return FALSE;
+        }
+    }
+
+    function get_one_objects($id)
+    {
+        $this->db->select('*')
+            ->from('objects_tb')
+            ->where('id', $id)
+            ->order_by('id', 'desc');
+        $query = $this->db->get();
+        if($query->num_rows > 0){
+            return $query->result();
+        }else{
+            return FALSE;
+        }
+    }
+
+    function objects_add($data)
+    {
+        return $this->db->insert('objects_tb', $data);
+    }
+
+    function objects_edit($id, $data)
+    {
+        return $this->db->update('objects_tb', $data, array('id'=>$id));
+    }
+
+    function objects_del($id)
+    {
+        return $this->db->delete('objects_tb', array('id'=>$id));
+    }
+
+
 }  
 ?>

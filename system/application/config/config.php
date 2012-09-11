@@ -329,6 +329,9 @@ $config['proxy_ips'] = '';
 $config['foto_thumb'] = "thumb_";
 $config['good_foto'] = array('thumb'=>array('width'=>83, 'height'=>False), 'foto'=>array('width'=>270, 'height'=>False));
 
+#фотки объектов
+$config['obj_foto_thumb'] = "thumb_";
+$config['obj_foto'] = array('thumb'=>array('width'=>260, 'height'=>260), 'foto'=>array('width'=>545, 'height'=>False));
 
 /* End of file config.php */
 /* Location: ./system/application/config/config.php */
