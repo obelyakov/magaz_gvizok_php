@@ -13,7 +13,7 @@ class menu extends Model {
             array('href'=>'tovcat', 'name'=>'Товарные категории'),
             array('href'=>'goods', 'name'=>'Товары'),
             array('href'=>'news', 'name'=>'Новости'),
-            array('href'=>'article', 'name'=>'Тексты'),
+            array('href'=>'text', 'name'=>'Тексты'),
             array('href'=>'objects', 'name'=>'Объекты'),
             array('href'=>'logout', 'name'=>'Выход'),
         );

@@ -103,5 +103,48 @@ class common_model extends Model {
     }
 
 
-}  
+
+    function get_text_list()
+    {
+        $this->db->select('*')
+            ->from('text_tb')
+            ->order_by('date', 'desc');
+        $query = $this->db->get();
+        if($query->num_rows > 0){
+            return $query->result();
+        }else{
+            return FALSE;
+        }
+    }
+
+    function get_one_text($id)
+    {
+        $this->db->select('*')
+            ->from('text_tb')
+            ->where('id', $id)
+            ->order_by('date', 'desc');
+        $query = $this->db->get();
+        if($query->num_rows > 0){
+            return $query->result();
+        }else{
+            return FALSE;
+        }
+    }
+
+    function text_add($data)
+    {
+        return $this->db->insert('text_tb', $data);
+    }
+
+    function text_edit($id, $data)
+    {
+        return $this->db->update('text_tb', $data, array('id'=>$id));
+    }
+
+    function text_del($id)
+    {
+        return $this->db->delete('text_tb', array('id'=>$id));
+    }
+
+}
 ?>
