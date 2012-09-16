@@ -175,7 +175,8 @@ class Goods extends Controller {
     {
         $good = $this->goods_dao->get_good($id_good);
         $id_seria = $good[0]->id_seria;
-        $good = cGoodsFabric::get_good($id_good);        
+
+        $good = cGoodsFabric::get_good($id_good);
         $val = array();
         foreach($good->get_value()->get_value() as $v)
         {

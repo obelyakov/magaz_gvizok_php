@@ -78,7 +78,7 @@ $(document).ready(function(){
         <? $good = $v->get_value()->get_value();?>
         <tr class="goods_tr" data_goodid="<?=$good[0]->id_good;?>">
             <?foreach($good as $vv):?>
-                <? if(in_array($vv->id_fieldtc, $onmain) && isset($vv->value)):?>
+                <? if(isset($vv->id_fieldtc) && in_array($vv->id_fieldtc, $onmain) && isset($vv->value)):?>
                     <td><?=$vv->value;?></td>
                 <?endif;?>
             <?endforeach;?>

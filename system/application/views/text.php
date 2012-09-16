@@ -1,0 +1,5 @@
+<h1><?=$text->title;?></h1>
+<?=$text->text;?>
+<?if(isset($text2)):?>
+    <?=$text2;?>
+<?endif;?>

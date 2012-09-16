@@ -1,0 +1,297 @@
+.pp_left, .pp_middle, .pp_right, .pp_content {
+	background: #fff;
+}
+
+.pp_content .ppt {
+	color: #000;
+}
+
+.pp_details {
+	position: relative;
+	font-size: 0.9em;
+	line-height: 1.1em;
+	color: #000;
+}
+
+.pp_details h4 {
+	color: #608e8c;
+	margin: 0 0 1em 0
+}
+
+#pp_full_res .pp_inline {
+	color: #000;
+}
+
+.pp_gallery a.pp_arrow_previous, .pp_gallery a.pp_arrow_next {
+	margin-top: 12px !important;
+}
+
+.pp_arrow_previous.disabled {
+	background-position: 0 -87px;
+	cursor: default;
+}
+
+.pp_arrow_next.disabled {
+	background-position: -22px -87px;
+	cursor: default;
+}
+
+.pp_loaderIcon {
+	background: url(/i/loader.gif) center center no-repeat;
+}
+
+div.pp_pic_holder a:focus {
+	outline: none;
+}
+
+div.pp_overlay {
+	background: #000;
+	display: none;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 9500;
+}
+
+div.pp_pic_holder {
+	display: none;
+	position: absolute;
+	width: 100px;
+	z-index: 10000;
+}
+
+.pp_top {
+	height: 10px;
+	position: relative;
+}
+
+* html .pp_top {
+	padding: 0 10px;
+}
+
+.pp_top .pp_left {
+	height: 10px;
+	left: 0;
+	position: absolute;
+	width: 10px;
+}
+
+.pp_top .pp_middle {
+	height: 10px;
+	left: 10px;
+	position: absolute;
+	right: 10px;
+}
+
+* html .pp_top .pp_middle {
+	left: 0;
+	position: static;
+}
+
+.pp_top .pp_right {
+	height: 10px;
+	left: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 10px;
+}
+
+.pp_content {
+	height: 40px;
+	min-width: 40px;
+}
+
+* html .pp_content {
+	width: 40px;
+}
+
+.pp_fade {
+	display: none;
+}
+
+.pp_content_container {
+	position: relative;
+	text-align: left;
+	width: 100%;
+}
+
+.pp_content_container .pp_left {
+	padding-left: 10px;
+}
+
+.pp_content_container .pp_right {
+	padding-right: 0;
+}
+
+.pp_content_container .pp_details {
+	float: left;
+	margin: 10px 0 10px 0;
+}
+
+.pp_description {
+	display: none;
+	margin: 0;
+	color: #34728f;
+	font-size: 14px;
+}
+
+.pp_social {
+	float: left;
+	margin: 0;
+}
+
+.pp_social .facebook {
+	float: left;
+	margin-left: 5px;
+	width: 55px;
+	overflow: hidden;
+}
+
+.pp_social .twitter {
+	float: left;
+}
+
+.pp_nav {
+	clear: right;
+	float: left;
+	margin: 3px 10px 0 0;
+}
+
+.pp_nav p {
+	float: left;
+	margin: 2px 4px;
+	white-space: nowrap;
+	color: #979797;
+}
+
+.pp_nav .pp_play, .pp_nav .pp_pause, a.pp_arrow_previous, a.pp_arrow_next, .pp_gallery li.default a img {
+	display: none;
+}
+
+.pp_hoverContainer {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 2000;
+}
+
+.pp_previous, .pp_next {
+	display: block;
+	float: left;
+	height: 100%;
+	width: 49%;
+	cursor: pointer;
+	background: url("/i/blank.png");
+}
+
+.pp_next {
+	float: right;
+}
+
+.pp_previous i, .pp_next i {
+	position: absolute;
+	top: 48%;
+	left: -30px;
+	visibility: hidden;
+}
+
+.pp_next i {
+	left: auto;
+	right: -30px;
+}
+
+.pp_previous:hover i, .pp_next:hover i {
+	visibility: visible;
+}
+
+a.pp_expand, a.pp_contract {
+	cursor: pointer;
+	display: none;
+	height: 20px;
+	position: absolute;
+	right: 30px;
+	text-indent: -10000px;
+	top: 10px;
+	width: 20px;
+	z-index: 20000;
+}
+
+.pp_close {
+	width: 41px;
+	height: 41px;
+	background: url(/i/sprites.png) 0 -265px no-repeat;
+	cursor: pointer;
+	position: absolute;
+	right: -52px;
+	top: -63px;
+	text-indent: -10000px;
+}
+
+.pp_bottom {
+	height: 30px;
+	position: relative;
+}
+
+* html .pp_bottom {
+	padding: 0 10px;
+}
+
+.pp_bottom .pp_left {
+	height: 10px;
+	left: 0;
+	position: absolute;
+	width: 10px;
+}
+
+.pp_bottom .pp_middle {
+	height: 10px;
+	left: 10px;
+	position: absolute;
+	right: 10px;
+}
+
+* html .pp_bottom .pp_middle {
+	left: 0;
+	position: static;
+}
+
+.pp_bottom .pp_right {
+	height: 10px;
+	left: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 10px;
+}
+
+.pp_loaderIcon {
+	display: block;
+	height: 24px;
+	left: 50%;
+	margin: -12px 0 0 -12px;
+	position: absolute;
+	top: 50%;
+	width: 24px;
+}
+
+#pp_full_res {
+	line-height: 1 !important;
+}
+
+#pp_full_res .pp_inline {
+	text-align: left;
+}
+
+#pp_full_res .pp_inline p {
+	margin: 0 0 15px 0;
+}
+
+div.ppt {
+	color: #fff;
+	display: none;
+	font-size: 17px;
+	margin: 0 0 31px 15px;
+	z-index: 9999;
+}
