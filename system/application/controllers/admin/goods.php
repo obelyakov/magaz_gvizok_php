@@ -222,9 +222,9 @@ class Goods extends Controller {
     {
         $config['upload_path'] = './uploads/';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size']	= '2048';
-        $config['max_width']  = '1024';
-        $config['max_height']  = '768';
+        $config['max_size']	= '128000';
+        $config['max_width']  = '10000';
+        $config['max_height']  = '10000';
         $config['encrypt_name']  = TRUE;
 
         $this->load->library('upload', $config);
@@ -253,8 +253,8 @@ class Goods extends Controller {
     function upload_file()
     {
         $config['upload_path'] = './uploads/';
-        $config['allowed_types'] = 'application/octet-stream|application/pdf|zip|pdf';
-        $config['max_size']	= '2048';
+        $config['allowed_types'] = 'application/octet-stream|application/pdf|zip|pdf|xls|xlsx';
+        $config['max_size']	= '128000';
         #$config['max_width']  = '1024';
         #$config['max_height']  = '768';
         $config['encrypt_name']  = TRUE;
@@ -263,6 +263,7 @@ class Goods extends Controller {
 
         if ( ! $this->upload->do_upload())
         {
+            #var_dump($this->upload->display_errors());die();
             redirect('/admin/goods/edit/'.(string) $this->input->post('seria_id').'/foto1');
         }
         else

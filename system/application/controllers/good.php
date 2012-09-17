@@ -65,16 +65,35 @@ class Good extends Controller {
         $item = $this->common_dao->get_one_text(6);
         $html_form = $this->load->view('contact_form', array(), TRUE);
 
-        $good = cGoodsFabric::get_good(38);
-
+        $good = cGoodsFabric::get_good($id);
+        $id_seria = $good->get_seria_id();
+        switch($id_seria)
+        {
+            case 43:
+            case 46:
+                $container = 'good_lift';
+                break;
+            case 44:
+                $container = 'good_eks_sjec';
+                break;
+            case 45:
+                $container = 'good_pass_konv_sjec';
+                break;
+        }
+        $g_param = array();
+        foreach($good->get_value()->get_value() as $v)
+        {
+            $g_param[$v->id_fieldtc] = $v->value;
+        }
         $data = array(
             'text' => $item[0],
-            'container' => 'good_lift',
-            'text2' => $html_form
+            'container' => $container,
+            'text2' => $html_form,
+            'good'=>$g_param
         );
-
+        $data['foto'] = $this->goods_dao->get_foto($id);
+        $data['file'] = $this->goods_dao->get_file($id);
         $this->load->view('other', $data);
-
     }
 
 

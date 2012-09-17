@@ -11,67 +11,14 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logs/access.log" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logs/error.log" />
     </list>
-    <list default="true" id="e601b4ed-57b2-4962-a8c0-3d5b916c41a0" name="New changelist" comment="Хаки для загрузки файлов зип и пдф">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1bold.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1bold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1extrabold.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1extrabold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1extrabold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/blank.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/bullet1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/bullet2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/header-main.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/header.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/sec-big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/sec.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/sjec-big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/sjec.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/sprites.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/i/white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/catalog_03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/catalog_07-05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/catalog_07.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/catalog_10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/catalog_12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/img1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/m-1_03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/our_objects_03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/our_objects_0344_03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/our_objects_06-03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/temp/our_objects_06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/controllers/contacts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/controllers/good.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/controllers/montaj.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/controllers/service.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/views/contact_form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/views/good_lift.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/views/main.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/views/text.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/views/top_menu.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1bold.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/fonts/font1extrabold.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/prettyPhoto.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/PIE.htc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/boxsizing.htc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/html5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/jquery-1.7.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/jquery.prettyPhoto.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/libs-combined.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/script.js" />
+    <list default="true" id="e601b4ed-57b2-4962-a8c0-3d5b916c41a0" name="New changelist" comment="Главная, тексты, сервис и контакты работают.&#10;Товары. Загрузка по 1 штуке по АйДи вроде работает. Но не вндрен в верстку">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/views/good_eks_sjec.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/system/application/views/good_pass_konv_sjec.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/application/controllers/admin/goods.php" afterPath="$PROJECT_DIR$/system/application/controllers/admin/goods.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/application/controllers/welcome.php" afterPath="$PROJECT_DIR$/system/application/controllers/welcome.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/application/views/admin/goods.php" afterPath="$PROJECT_DIR$/system/application/views/admin/goods.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/application/views/other.php" afterPath="$PROJECT_DIR$/system/application/views/other.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/.htaccess" afterPath="$PROJECT_DIR$/www/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/application/controllers/good.php" afterPath="$PROJECT_DIR$/system/application/controllers/good.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/application/views/good_lift.php" afterPath="$PROJECT_DIR$/system/application/views/good_lift.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/application/views/top_menu.php" afterPath="$PROJECT_DIR$/system/application/views/top_menu.php" />
     </list>
     <ignored path="magaz_gvizok_php.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -101,7 +48,7 @@
       <file leaf-file-name="top_menu.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/application/views/top_menu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="19" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
+            <state line="2" column="22" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -110,7 +57,7 @@
       <file leaf-file-name="other.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/application/views/other.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="722" selection-end="722" vertical-scroll-proportion="-2.2692308">
+            <state line="40" column="10" selection-start="1131" selection-end="1131" vertical-scroll-proportion="-12.730769">
               <folding />
             </state>
           </provider>
@@ -119,7 +66,25 @@
       <file leaf-file-name="goods.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/application/controllers/admin/goods.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="632" selection-end="694" vertical-scroll-proportion="-7.48">
+            <state line="373" column="0" selection-start="11318" selection-end="11323" vertical-scroll-proportion="4.76">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="good_pass_konv_sjec.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/application/views/good_pass_konv_sjec.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="21" selection-start="560" selection-end="560" vertical-scroll-proportion="-10.461538">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="good_eks_sjec.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/application/views/good_eks_sjec.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="179" selection-end="547" vertical-scroll-proportion="-5.230769">
               <folding />
             </state>
           </provider>
@@ -128,7 +93,7 @@
       <file leaf-file-name="good.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/system/application/controllers/good.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="41" selection-start="2068" selection-end="2068" vertical-scroll-proportion="0.52737224">
+            <state line="87" column="0" selection-start="2607" selection-end="2607" vertical-scroll-proportion="0.57954544">
               <folding />
             </state>
           </provider>
@@ -137,7 +102,7 @@
       <file leaf-file-name="good_lift.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/application/views/good_lift.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+            <state line="12" column="69" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -184,21 +149,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/system/application/controllers/welcome.php" />
-        <option value="$PROJECT_DIR$/system/application/views/main.php" />
-        <option value="$PROJECT_DIR$/system/application/montaj.php" />
         <option value="$PROJECT_DIR$/system/application/views/admin/text.php" />
         <option value="$PROJECT_DIR$/system/application/controllers/montaj.php" />
         <option value="$PROJECT_DIR$/system/application/controllers/service.php" />
-        <option value="$PROJECT_DIR$/system/application/views/top_menu.php" />
         <option value="$PROJECT_DIR$/system/application/views/text.php" />
         <option value="$PROJECT_DIR$/system/application/views/contact_form.php" />
         <option value="$PROJECT_DIR$/system/application/controllers/contacts.php" />
         <option value="$PROJECT_DIR$/system/application/views/admin/goods.php" />
-        <option value="$PROJECT_DIR$/system/application/views/good_lift.php" />
         <option value="$PROJECT_DIR$/system/application/views/other.php" />
-        <option value="$PROJECT_DIR$/system/application/controllers/admin/goods.php" />
         <option value="$PROJECT_DIR$/system/application/controllers/goods.php" />
+        <option value="$PROJECT_DIR$/system/application/controllers/admin/goods.php" />
+        <option value="$PROJECT_DIR$/system/application/views/good_lift.php" />
+        <option value="$PROJECT_DIR$/system/application/views/good_lift_sjec.php" />
+        <option value="$PROJECT_DIR$/system/application/views/good_eks_sjec.php" />
+        <option value="$PROJECT_DIR$/system/application/views/good_pass_konv_sjec.php" />
+        <option value="$PROJECT_DIR$/system/application/views/top_menu.php" />
         <option value="$PROJECT_DIR$/system/application/controllers/good.php" />
       </list>
     </option>
@@ -425,6 +390,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\new_leg_grom_git.loc\system\application\views" />
       <recent name="C:\xampp\htdocs\new_leg_grom_git.loc\system\application\controllers" />
       <recent name="C:\xampp\htdocs\new_leg_grom_git.loc\system\application\views\admin\text" />
       <recent name="C:\xampp\htdocs\new_leg_grom_git.loc\system\application\views\admin\objects" />
@@ -561,7 +527,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Хаки для загрузки файлов зип и пдф" />
+    <option name="LAST_COMMIT_MESSAGE" value="Главная, тексты, сервис и контакты работают.&#10;Товары. Загрузка по 1 штуке по АйДи вроде работает. Но не вндрен в верстку" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -585,32 +551,12 @@
     <MESSAGE value="Работа с объектами в админке" />
     <MESSAGE value="Работа с текстами&#10;" />
     <MESSAGE value="Хаки для загрузки файлов зип и пдф" />
+    <MESSAGE value="Главная, тексты, сервис и контакты работают.&#10;Товары. Загрузка по 1 штуке по АйДи вроде работает. Но не вндрен в верстку" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/system/application/views/admin/other.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1547" selection-end="1612" vertical-scroll-proportion="-13.730769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/application/controllers/service.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/application/controllers/montaj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="28" selection-start="699" selection-end="699" vertical-scroll-proportion="0.6666667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/application/models/admin/common_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="138" column="13" selection-start="2971" selection-end="2971" vertical-scroll-proportion="0.0" />
@@ -651,13 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/application/views/top_menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="19" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/application/models/admin/goods_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="13" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0">
@@ -672,30 +611,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/application/views/other.php">
+    <entry file="file://$PROJECT_DIR$/system/application/views/good_lift.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="722" selection-end="722" vertical-scroll-proportion="-2.2692308">
+        <state line="12" column="69" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/application/views/good_lift.php">
+    <entry file="file://$PROJECT_DIR$/system/application/views/other.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+        <state line="40" column="10" selection-start="1131" selection-end="1131" vertical-scroll-proportion="-12.730769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/application/views/good_eks_sjec.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="179" selection-end="547" vertical-scroll-proportion="-5.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/application/views/good_pass_konv_sjec.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="21" selection-start="560" selection-end="560" vertical-scroll-proportion="-10.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/application/views/top_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="22" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/application/controllers/admin/goods.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="632" selection-end="694" vertical-scroll-proportion="-7.48">
+        <state line="373" column="0" selection-start="11318" selection-end="11323" vertical-scroll-proportion="4.76">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/application/controllers/good.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="41" selection-start="2068" selection-end="2068" vertical-scroll-proportion="0.52737224">
+        <state line="87" column="0" selection-start="2607" selection-end="2607" vertical-scroll-proportion="0.57954544">
           <folding />
         </state>
       </provider>
