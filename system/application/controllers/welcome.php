@@ -25,9 +25,11 @@ class Welcome extends Controller {
     function index()
     {
         $item = $this->common_dao->get_one_text(3);
+        $our_obj = $this->common_dao->get_objects_list();
         $data = array(
             'text' => $item[0],
             'container' => 'news/news',
+            'our_obj' =>  array_slice($our_obj, 0, 5),
         );
         $this->load->view('main', $data);
     }

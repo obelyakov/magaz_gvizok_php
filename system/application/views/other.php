@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/prettyPhoto.css" />
     <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <title></title>
@@ -42,6 +43,7 @@
 </footer>
 
 <script src="/js/libs-combined.js"></script>
+<script src="js/jquery.prettyPhoto.min.js"></script>
 <script src="/js/script.js"></script>
 </body>
 </html>

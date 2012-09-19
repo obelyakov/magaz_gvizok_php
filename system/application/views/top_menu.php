@@ -31,7 +31,7 @@
         </div>
         <li><a href="/montaj">Монтаж</a>
         <li><a href="/service">Сервис</a>
-        <li><a href="#">Наши объекты</a>
+        <li><a href="/our_obj">Наши объекты</a>
         <li><a href="/contacts">Контакты</a>
     </ul>
 </nav>

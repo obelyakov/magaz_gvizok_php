@@ -28,12 +28,9 @@
                 <i class="icon-next2"></i>
                 <div class="scroller">
                     <ul>
-                        <li><a href="#"><img src="/temp/m-1_03.jpg"></a>Монтаж 32 лифтов в ТРЦ АЭРОБУС</li>
-                        <li><a href="#"><img src="/temp/m-1_03.jpg"></a>Монтаж 128 лифтов в ТРЦ АЭРОБУС</li>
-                        <li><a href="#"><img src="/temp/m-1_03.jpg"></a>Монтаж 256 лифтов в ТРЦ АЭРОБУС</li>
-                        <li><a href="#"><img src="/temp/m-1_03.jpg"></a>Монтаж 512 лифтов в ТРЦ АЭРОБУС</li>
-                        <li><a href="#"><img src="/temp/m-1_03.jpg"></a>Монтаж 1337 лифтов в ТРЦ АЭРОБУС</li>
-                        <li><a href="#"><img src="/temp/m-1_03.jpg"></a>Монтаж 65535 лифтов в торгово-развлекательном центре АЭРОБУС</li>
+                        <?foreach($our_obj as $v):?>
+                        <li><a href="#"><img src="/uploads/thumb_<?=$v->fname;?>"></a><?=$v->text;?></li>
+                        <?endforeach;?>
                     </ul>
                 </div>
             </div>

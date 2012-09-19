@@ -65,9 +65,9 @@ class Objects extends Controller {
         }else{
             $config['upload_path'] = './uploads/';
             $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size']	= '2048';
-            $config['max_width']  = '1024';
-            $config['max_height']  = '768';
+            $config['max_size']	= '10000';
+            $config['max_width']  = '5000';
+            $config['max_height']  = '5000';
             $config['encrypt_name']  = TRUE;
 
             $this->load->library('upload', $config);
