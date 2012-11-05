@@ -60,14 +60,12 @@ class Good extends Controller {
         $this->load->view('other', $data);
     }
 
-    function lift($id)
-    {
-        $item = $this->common_dao->get_one_text(6);
-        $html_form = $this->load->view('contact_form', array(), TRUE);
 
+    function lift_one($id)
+    {
         $good = cGoodsFabric::get_good($id);
-        $id_seria = $good->get_seria_id();
-        switch($id_seria)
+        $seria_id = $good->get_seria_id();
+        switch($seria_id)
         {
             case 43:
             case 46:
@@ -79,6 +77,9 @@ class Good extends Controller {
             case 45:
                 $container = 'good_pass_konv_sjec';
                 break;
+            case 48:
+                $container = 'good_lift';
+                break;
         }
         $g_param = array();
         foreach($good->get_value()->get_value() as $v)
@@ -86,11 +87,76 @@ class Good extends Controller {
             $g_param[$v->id_fieldtc] = $v->value;
         }
         $data = array(
-            'text' => $item[0],
             'container' => $container,
-            'text2' => $html_form,
-            'good'=>$g_param
+            'good'=>$g_param,
         );
+
+        $data['foto'] = $this->goods_dao->get_foto($id);
+        $data['file'] = $this->goods_dao->get_file($id);
+        $this->load->view('other', $data);
+
+    }
+
+    function lift($id)
+    {
+        //получаем id серии для которой нужно выводить товары
+        $seria_id = $id;
+        $goods = $this->goods_dao->get_goods_by_seria($seria_id);
+        if($goods)
+        {
+            $goods_obj = array();
+            $good_attr = array();
+            $good_shap = array();
+            foreach($goods as $k => $v)
+            {
+                $goods_obj[$v->id_good] = cGoodsFabric::get_good($v->id_good);
+                $good_attr[$v->id_good] = $goods_obj[$v->id_good]->get_value()->get_value();
+            }
+
+            // получаем шапку в удобном виде
+            // массив объектов из последнего
+            $arr1 = $goods_obj[$v->id_good]->get_value()->get_key();
+            $onmain_arr = array();
+            foreach($arr1 as $v)
+            {
+                $good_shap[$v->id_filedtc] = $v;
+                if($v->onmain=='Y')
+                    $onmain_arr[] = $v->id_filedtc;
+            }
+            $good_exist = 1;
+        }else{
+            $good_exist = 0;
+        }
+
+        $good = cGoodsFabric::get_good($id);
+        $id_seria = $good->get_seria_id();
+        switch($seria_id)
+        {
+            case 43:
+            case 46:
+                $container = 'good_lift';
+                break;
+            case 44:
+                $container = 'good_eks_sjec';
+                break;
+            case 45:
+                $container = 'good_pass_konv_sjec';
+                break;
+            case 48:
+                $container = 'goog_list';
+                break;
+        }
+        $g_param = array();
+        foreach($good->get_value()->get_value() as $v)
+        {
+            $g_param[$v->id_fieldtc] = $v->value;
+        }
+        $data = array(
+            'container' => $container,
+            'good'=>$g_param,
+            'goods'=>$goods_obj
+        );
+
         $data['foto'] = $this->goods_dao->get_foto($id);
         $data['file'] = $this->goods_dao->get_file($id);
         $this->load->view('other', $data);

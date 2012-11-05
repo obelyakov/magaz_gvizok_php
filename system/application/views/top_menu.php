@@ -6,7 +6,7 @@
             <div>
                 <ul>
                     <li class="title">SEC
-                    <li><a href="/good/lift/41">CALYPSO</a>
+                    <li><a href="/good/lift/48">CALYPSO</a>
                     <li><a href="/good/lift/42">TELESTO</a>
                     <li><a href="/good/lift/43">VERTICAL E</a>
                     <li><a href="/good/lift/44">TITAN</a>
