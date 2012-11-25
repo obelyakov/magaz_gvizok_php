@@ -1,4 +1,11 @@
+<style type="text/css">
+tr.myDragClass td {
+color: #000000;
+background-color: #d9d9d9;
+}
+</style>
 <script type="text/javascript" src="/js/jquery.collapser.js"></script>
+<script type="text/javascript" src="/js/jquery.tablednd.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $('.demo6').collapser({
@@ -40,8 +47,16 @@ $(document).ready(function(){
         return confirm('Удалить товар?');
     })
 
-});
+    $("#goods_table").tableDnD(
+        {   onDragClass:"myDragClass",
+            onDrop:     function(){
+                        $.post('/admin/goods/set_order/', {'sort_str':$.tableDnD.serialize(),
+                                                            'seria_id':<?=$seria_id;?>});
+            }
+        }
+    );
 
+});
 </script>
 <?if(isset($mess) && $mess):?><div><p class="error"><?=$mess;?></p></div><?endif;?>
 <div id="tmp_form">
@@ -64,7 +79,7 @@ $(document).ready(function(){
         <?endif;?>
     <?else:?>
     <a id="add_good_but" href="#">Добавить товар в серию</a>
-    <table>
+    <table id="goods_table">
         <tr>
             <?foreach($shap as $v):?>
                 <?if($v->onmain=='Y'):?>
@@ -76,7 +91,7 @@ $(document).ready(function(){
         </tr>
     <?foreach($goods as $v):?>
         <? $good = $v->get_value()->get_value();?>
-        <tr class="goods_tr" data_goodid="<?=$good[0]->id_good;?>">
+        <tr class="goods_tr" data_goodid="<?=$good[0]->id_good;?>" id="<?=$good[0]->id_good;?>">
             <?foreach($good as $vv):?>
                 <? if(isset($vv->id_fieldtc) && in_array($vv->id_fieldtc, $onmain) && isset($vv->value)):?>
                     <td><?=$vv->value;?></td>

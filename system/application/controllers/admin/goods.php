@@ -120,6 +120,14 @@ class Goods extends Controller {
 
         $this->load->view('admin/other', $data);
     }
+
+    /*
+     * Установка порядка сортировки товаров в серии
+     */
+    function set_order()
+    {
+        $this->goods_dao->set_order($this->input->post('sort_str'));
+    }
     
     /**
      * Окно-Форма добавления товара

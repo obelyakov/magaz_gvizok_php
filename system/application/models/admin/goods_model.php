@@ -59,7 +59,8 @@ class goods_model extends Model {
     {
         $this->db->select('*')
                 ->from('goods_tb')
-                ->where(array('id_seria' => $id_seria));
+                ->where(array('id_seria' => $id_seria))
+                ->order_by('order');
         $query = $this->db->get();
         if($query->num_rows > 0){
             $r = $query->result();
@@ -225,7 +226,23 @@ class goods_model extends Model {
         $query = $this->db->get();
         return $query->result_object();
     }
+
+    function set_order($post)
+    {
+        parse_str($post, $arr);
+        foreach($arr['goods_table'] as $k=>$v)
+        {
+            if($k!=0){
+                $this->db->where(array('id_good'=>$v));
+                $this->db->update('goods_tb', array('order'=>$k));
+            }
+        }
+    }
+
+
+
 }
+
 
 
 
