@@ -23,9 +23,14 @@
     <div class="layout-onecol">
         <div class="content">
             <div class="breadcrumbs">
-                <a href="#">Главная</a>
+                <?if(isset($breadcrumbs)):?>
+                    <?foreach($breadcrumbs as $v):?>
+                        <a href="<?=$v['path'];?>"><?=$v['name'];?></a>
+                    <?endforeach;?>
+                <?else:?>
+                    <a href="#">Главная</a>
+                <?endif;?>
             </div>
-
             <?=$this->load->view($container);?>
 
         </div>

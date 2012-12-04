@@ -1,6 +1,11 @@
 <nav class="primary">
     <ul>
         <li><a href="/">О нас</a>
+            <div>
+                <ul>
+                    <li><a href="/news/">Новости</a>
+                </ul>
+            </div>
         <li>
             <a href="#">Лифты</a>
             <div>
