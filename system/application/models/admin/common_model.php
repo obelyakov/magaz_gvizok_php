@@ -15,17 +15,27 @@ class common_model extends Model {
      * @param int id товара
      * @return object 
      */
-    function get_news_list()
+    function get_news_list($a=Null, $b =null)
     {
         $this->db->select('*')
                 ->from('news_tb')
                 ->order_by('date', 'desc');
+        if(isset($a) and isset($b))
+        {
+            $this->db->limit($a, $b);
+        }
+
         $query = $this->db->get();
         if($query->num_rows > 0){
             return $query->result();
         }else{
             return FALSE;
         }
+    }
+
+    function news_count()
+    {
+        return $this->db->count_all('news_tb');
     }
     
     function get_one_news($id)

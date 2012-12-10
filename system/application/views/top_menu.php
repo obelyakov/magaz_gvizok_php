@@ -12,10 +12,10 @@
                 <ul>
                     <li class="title">SEC
                     <li><a href="/good/lift/48">CALYPSO</a>
-                    <li><a href="/good/lift/42">TELESTO</a>
-                    <li><a href="/good/lift/43">VERTICAL E</a>
-                    <li><a href="/good/lift/44">TITAN</a>
-                    <li><a href="/good/lift/45">VERTICAL H</a>
+                    <li><a href="/good/lift/49">TELESTO</a>
+                    <li><a href="/good/lift/50">VERTICAL E</a>
+                    <li><a href="/good/lift/51">TITAN</a>
+                    <li><a href="/good/lift/52">VERTICAL H</a>
                 </ul><ul><!--Пробелов не должно быть-->
                 <li class="title">SJEC
                 <li><a href="/good/lift/51">С300</a>

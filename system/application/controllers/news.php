@@ -1,6 +1,7 @@
 <?php
 
 class News extends Controller {
+    static $onpage = 3;
 
     function News()
     {
@@ -8,7 +9,7 @@ class News extends Controller {
         $this->load->model('admin/common_model', 'common_dao');
     }
 
-    function index()
+    function index($page=0)
     {
         $breadcrumbs = array(
             array('path'=>'/',
@@ -19,12 +20,21 @@ class News extends Controller {
                 'name'=>'Новости'),
         );
 
-        $list = $this->common_dao->get_news_list();
+        if($page)
+        {
+            $offset = $page * self::$onpage;
+        }else
+        {
+            $offset=0;
+        }
+        $list = $this->common_dao->get_news_list(self::$onpage, $offset);
 
+        $page_count = ceil($this->common_dao->news_count()/self::$onpage);
         $data = array(
             'container' => 'news_list',
             'breadcrumbs'=>$breadcrumbs,
             'list'=>$list,
+            'pc'=>$page_count
         );
         $this->load->view('other', $data);
     }

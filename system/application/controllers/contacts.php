@@ -28,20 +28,20 @@ class Contacts extends Controller {
         if($form_act)
         {# проверка формы
             $this->load->library('email');
-            $config['protocol'] = 'sendmail';
+            $config['protocol'] = 'mail';
             $config['mailpath'] = '/usr/sbin/sendmail';
-            $config['charset'] = 'iso-8859-1';
+            $config['charset'] = 'utf-8';
             $config['wordwrap'] = TRUE;
 
             $this->email->initialize($config);
 
-            $this->email->from('b.oleg@mail.ru', 'site');
-            $this->email->to('b.oleg@mail.ru');
+            $this->email->from('admin@quadrat.hajdu.ru', 'Посетитель сайта quadrat');
+            $this->email->to('b.oleg@mail.ru,dolbeshkin@yandex.ru');
             #$this->email->cc('another@another-example.com');
             #$this->email->bcc('them@their-example.com');
 
-            $this->email->subject('Письмо с сайты');
-            $this->email->message($this->input->post('text'));
+            $this->email->subject('Письмо с сайта quadrat.ru');
+            $this->email->message("Имя: ".$this->input->post('fio')."\n\rEMAIL: ".$this->input->post('email')."\n\rТекст: ".$this->input->post('text'));
 
             $this->email->send();
         }

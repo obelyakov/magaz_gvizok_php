@@ -1,5 +1,5 @@
 <h2>Отправить запрос:</h2>
-<form method="post">
+<form method="post" action="/contacts">
 <div class="form">
     <dl><dt>Ваши имя и фамилия<dd><input type="text" name="fio" data-placeholder="ФИО"></dl>
     <dl><dt>Ваш e-mail<dd><input type="text" name="email" data-placeholder="email"></dl>

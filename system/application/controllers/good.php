@@ -78,6 +78,10 @@ class Good extends Controller {
                 $container = 'good_pass_konv_sjec';
                 break;
             case 48:
+            case 49:
+            case 50:
+            case 51:
+            case 52:
                 $container = 'good_lift';
                 break;
         }
@@ -128,32 +132,19 @@ class Good extends Controller {
             $good_exist = 0;
         }
 
-        $good = cGoodsFabric::get_good($id);
-        $id_seria = $good->get_seria_id();
         switch($seria_id)
         {
-            case 43:
-            case 46:
-                $container = 'good_lift';
-                break;
-            case 44:
-                $container = 'good_eks_sjec';
-                break;
-            case 45:
-                $container = 'good_pass_konv_sjec';
-                break;
+
             case 48:
+            case 49:
+            case 50:
+            case 51:
+            case 52:
                 $container = 'goog_list';
                 break;
         }
-        $g_param = array();
-        foreach($good->get_value()->get_value() as $v)
-        {
-            $g_param[$v->id_fieldtc] = $v->value;
-        }
         $data = array(
             'container' => $container,
-            'good'=>$g_param,
             'goods'=>$goods_obj
         );
 
