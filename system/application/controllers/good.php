@@ -72,16 +72,18 @@ class Good extends Controller {
                 $container = 'good_lift';
                 break;
             case 44:
-                $container = 'good_eks_sjec';
+                $container = 'good_eks_sjec2';
                 break;
             case 45:
-                $container = 'good_pass_konv_sjec';
+                $container = 'good_eks_sjec';
                 break;
             case 48:
             case 49:
             case 50:
             case 51:
             case 52:
+            case 53:
+            case 54:
                 $container = 'good_lift';
                 break;
         }
@@ -140,6 +142,8 @@ class Good extends Controller {
             case 50:
             case 51:
             case 52:
+            case 53:
+            case 54:
                 $container = 'goog_list';
                 break;
         }
