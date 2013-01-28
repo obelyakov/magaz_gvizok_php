@@ -4,7 +4,7 @@
  *  КОНТРОЛЛЕР Работа с ТОВАРАМИ Админский класс
  *  @property goods_model $goods_dao
  */
-class Goods extends Controller {
+class Goods extends MY_Controller {
 
     public $is_login;
     public $menu;
@@ -16,7 +16,7 @@ class Goods extends Controller {
 
     function Goods()
     {
-        parent::Controller();
+        parent::__construct();
         //$this->output->enable_profiler(TRUE);
         $this->load->model('admin/menu', 'menu_dao');
         $this->load->model('admin/auth', 'auth_dao');
@@ -209,7 +209,7 @@ class Goods extends Controller {
         $data['seria_id'] = $id_seria;
         $data['val'] = $val;
 
-        $this->load->view('admin/layout_ajax_empty', $data);
+        $this->_view_nocache('admin/layout_ajax_empty', $data);
     }
 
     
