@@ -1,0 +1,107 @@
+class DictListComparator(object):
+    def __init__(self):
+        self._addinfo = None
+        self._listA = []
+        self._listB = []
+        self._keys = []
+        self._data = []
+        self._clear()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exp_type, exp_value, traceback):
+        self._clear()
+
+    def _clear(self):
+        """
+        clear comparison results
+        """
+        self._updated = []
+        self._deleted = []
+        self._inserted = []
+
+    def setCP(self, keys, data):
+        """
+        set comparison parameters
+        key - key name for items (e.g. 'id')
+        data - keys list for comparison
+        """
+        self._keys = keys
+        self._data = data
+        self._clear()
+
+    def setAB(self, listA, listB):
+        """
+        set data for comparison
+        listA - master list
+        listB - synchronized list
+        """
+        self._listA = listA
+        self._listB = listB
+        self._clear()
+
+    def setAddInfo(self, key):
+        """
+        set the data from listB, who add to update
+        """
+        self._addinfo = key
+        self._clear()
+
+    def compare(self):
+        """
+        compare lists
+        """
+       # dictA = {item[tuple(self._keys)]: item for item in self._listA}
+       # dictB = {item[tuple(self._keys)]: item for item in self._listB}
+        dictA = {}
+        dictB = {}
+
+        for item in self._listA:
+            key = tuple([item[key_item] for key_item in self._keys])
+            dictA[key] = item
+
+        for item in self._listB:
+            key = tuple([item[key_item] for key_item in self._keys])
+            dictB[key] = item
+
+        key_setA = set(dictA.keys())
+        key_setB = set(dictB.keys())
+
+        common_keys = key_setA & key_setB
+        inserted_keys = key_setA - key_setB
+        deleted_keys = key_setB - key_setA
+
+        self._inserted = [dictA[key] for key in inserted_keys]
+        self._deleted = [dictB[key] for key in deleted_keys]
+
+        for key in common_keys:
+            itemA = dictA[key]
+            itemB = dictB[key]
+            for option in self._data:
+                if itemA[option] != itemB[option]:
+                    if self._addinfo:
+                        itemA[self._addinfo] = itemB[self._addinfo]
+                    self._updated.append(itemA)
+                    break
+
+
+    def update(self):
+        """
+        returns list of dictionaries to be updated
+        """
+        return self._updated
+
+    def delete(self):
+        """
+        returns list of dictionaries to be deleted
+        """
+        return self._deleted
+
+    def insert(self):
+        """
+        returns list of dictionaries to be inserted
+        """
+        return self._inserted
+
+
